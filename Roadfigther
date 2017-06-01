@@ -1,0 +1,283 @@
+import tkinter
+
+ventana1=tkinter.Tk()
+canvas1 = tkinter.Canvas(ventana1,width=800,height=600)
+ventana1.title("Road Fighter")
+menu=tkinter.PhotoImage(file="Menu.gif")
+x = canvas1.create_image(400,300,image=menu)
+#Botones y textos
+#Nombre jugador 1
+playername1=tkinter.Label(ventana1,text="Player 1 Name: ")
+playername1.place(x=100,y=400)
+variable_string = tkinter.StringVar()
+cajadetexto = tkinter.Entry(ventana1,textvariable=variable_string)
+cajadetexto.place(x=200,y=400)
+#Nombre jugador 2
+playername2=tkinter.Label(ventana1,text="Player 2 Name: ")
+playername2.place(x=500,y=400)
+variable_string = tkinter.StringVar()
+cajadetexto = tkinter.Entry(ventana1,textvariable=variable_string)
+cajadetexto.place(x=600,y=400)
+#comenzar (start)
+botonstart = tkinter.Button(ventana1,text="Start",bg='Grey',command=menu)
+botonstart.place(x=400,y=450)
+#un jugador                   
+boton1player = tkinter.Button(ventana1,text="1 Player",bg='Red')
+boton1player.place(x=200,y=500)
+#dos jugadores
+boton2players = tkinter.Button(ventana1,text="2 Players",bg='Blue')
+boton2players.place(x=600,y=500)
+canvas1.pack()
+ventana1.mainloop()
+def boton ():
+    b = tkinter.Toplevel(ventana1)
+def menu():
+    ventana1.iconify()
+    b.withdraw()
+
+
+
+
+
+ventana2=tkinter.Tk()
+canvas2 = tkinter.Canvas(ventana2,width=800,height=800)
+ventana2.title("Road Fighter")
+
+
+juego = tkinter.PhotoImage(file="Mapa roadfigther 1.gif")
+x = canvas2.create_image(200,200,image=juego)
+
+juego1 = tkinter.PhotoImage(file="Mapa roadfigther 1.gif")
+g = canvas2.create_image(600,200,image=juego1)
+
+carro1 = tkinter.PhotoImage(file="carro1.gif")
+y = canvas2.create_image(600,550,image=carro1)
+
+carro2 = tkinter.PhotoImage(file="carro2.gif")
+z = canvas2.create_image(100,550,image=carro2)
+
+camion = tkinter.PhotoImage(file="camion.gif")
+a = canvas2.create_image(200,-300,image=camion)
+
+barril = tkinter.PhotoImage(file="barril.gif")
+b = canvas2.create_image(200,-1500,image=barril)
+
+aceite = tkinter.PhotoImage(file="aceite.gif")
+c = canvas2.create_image(100,-500,image=aceite)
+
+runner = tkinter.PhotoImage(file="runner.gif")
+r = canvas2.create_image(100,-2000,image=runner)
+
+camion2 = tkinter.PhotoImage(file="camion.gif")
+aa = canvas2.create_image(500,-300,image=camion)
+
+barril2 = tkinter.PhotoImage(file="barril.gif")
+bb = canvas2.create_image(600,-1500,image=barril)
+
+aceite2 = tkinter.PhotoImage(file="aceite.gif")
+cc = canvas2.create_image(600,-500,image=aceite)
+
+runner2 = tkinter.PhotoImage(file="runner.gif")
+rr = canvas2.create_image(500,-2000,image=runner2)
+
+explosion = tkinter.PhotoImage(file="explosion.gif")
+
+def mapa():
+    """
+    """
+    global x, canvas2
+    if canvas2.coords(x)[1] <10000:
+        canvas2.move(x,0,30)
+        ventana2.after(100,mapa)
+    if canvas2.coords(x)[1] >= 10000:
+        canvas2.move(x,0,0)
+
+mapa()
+
+def mapa1():
+    """
+    """
+    global g, canvas2
+    if canvas2.coords(g)[1] <10000:
+        canvas2.move(g,0,30)
+        ventana2.after(100,mapa1)
+    if canvas2.coords(g)[1] >= 10000:
+        canvas2.move(g,0,0)
+
+mapa1()
+
+
+
+def camion1():
+    global a, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(a,0,5)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,camion1)
+     
+camion1()
+
+def barril1():
+    global b, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(b,0,6)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,barril1)
+     
+barril1()
+
+def aceite1():
+    global c, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(c,0,5)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,aceite1)
+
+aceite1()
+
+def runner1():
+    global r, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(r,0,8)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,runner1)
+
+runner1()
+
+def camion2():
+    global aa, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(aa,0,5)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,camion2)
+     
+camion2()
+
+def barril2():
+    global bb, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(bb,0,6)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,barril2)
+     
+barril2()
+
+def aceite2():
+    global cc, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(cc,0,5)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,aceite2)
+
+aceite2()
+
+def runner2():
+    global rr, canvas2
+    posicion=100
+    i=0
+    if(i<5):
+        canvas2.move(rr,0,8)
+        i=i+1
+        posicion=posicion+1
+        ventana2.after(10,runner2)
+
+runner2()
+
+presiono = False
+d = None
+e = 0
+f = 0
+
+def derecha():
+    """
+    """
+    global presiono,d,e,f,y
+    canvas2.delete(y)
+    canvas2.delete(d)
+    e = e + 10
+    d = canvas2.create_image(600+e,550+f,image=carro1)
+
+def izquierda():
+    """
+    """
+    global presiono,d,e,f,y
+    canvas2.delete(y)
+    canvas2.delete(d)
+    e = e - 10
+    d = canvas2.create_image(600+e,550+f,image=carro1)
+
+def key(event):
+    """
+    """
+    global d,e,f,y,z
+    canvas2.delete(y)
+    tecla = repr(event.char)
+    if(tecla == "'l'"):
+        if(e < 10):
+            canvas2.delete(d)
+            e = e + 10
+            d = canvas2.create_image(600+e,550+f,image=carro1)
+        else:
+            canvas2.delete(d)
+            canvas2.delete(d)
+            d = canvas2.create_image(600+e,550+f,image=explosion)           
+    if(tecla == "'j'"):
+        if(e > -115):
+            canvas2.delete(d)
+            e = e - 10
+            d = canvas2.create_image(600+e,550+f,image=carro1)
+        else:
+            canvas2.delete(d)
+            d = canvas2.create_image(600+e,550+f,image=explosion)
+    if(tecla == "'d'"):
+        if(e < 110):
+            canvas2.delete(z)
+            e = e + 10
+            z = canvas2.create_image(100+e,550+f,image=carro2)
+        else:
+            canvas2.delete(z)
+            canvas2.delete(z)
+            z = canvas2.create_image(100+e,550+f,image=explosion)           
+    if(tecla == "'a'"):
+        if(e > -20):
+            canvas2.delete(z)
+            e = e - 10
+            z = canvas2.create_image(100+e,550+f,image=carro2)
+        else:
+            canvas2.delete(z)
+            z = canvas2.create_image(100+e,550+f,image=explosion)
+
+def choques():
+    global a, z, y
+    if (posx1 == posy1) and (posx2 == posy2):
+        canvas2.delete(z)
+        canvas2.delete(a)
+        
+    else:
+        canvas2.delete(y)
+        canvas2.delete(a)
+        
+canvas2.bind("<Key>", key)
+canvas2.pack()
+canvas2.focus_set()
